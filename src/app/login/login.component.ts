@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     console.log(username, password)
     const user = this.userService.findByUserCredentials(username, password);
     if (user != null) {
-      this.router.navigate(['student-navigator', user._id])
+      this.router.navigate(['student'])
     }
   }
 }
