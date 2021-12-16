@@ -1,0 +1,10 @@
+.block {
+    display: block;
+    width: 5%;
+    border: none;
+    background-color: #bebef5;
+    padding: 10px 15px;
+    font-size: 13px;
+    cursor: pointer;
+    text-align: center;
+}
