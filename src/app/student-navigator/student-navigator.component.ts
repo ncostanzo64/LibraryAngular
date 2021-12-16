@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { StudentService } from 'src/service/StudentService';
 
 @Component({
@@ -7,13 +8,26 @@ import { StudentService } from 'src/service/StudentService';
   styleUrls: ['./student-navigator.component.css']
 })
 export class StudentNavigatorComponent implements OnInit {
-  students: any[] | undefined;
+  userId: any;
 
-  constructor(private studentService: StudentService) { }
+  constructor(private studentService: StudentService, private activatedRoute: ActivatedRoute) { }
+  students: any[] | undefined;
+  selectedStudent = {
+  modules: [],
+  id: undefined
+};
 
   ngOnInit(): void {
     this.studentService.findAllStudents()
       .then(students => this.students = students)
+      this.activatedRoute
+      .params
+      .subscribe(params =>
+        this.userId = params['userId']);
+  }
+
+  selectStudent(student: any) {
+    this.selectStudent = student;
   }
 
 }
