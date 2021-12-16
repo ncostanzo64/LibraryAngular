@@ -20,7 +20,14 @@ export class StudentNavigatorComponent implements OnInit {
   ngOnInit(): void {
     this.studentService.findAllStudents()
       .then(students => this.students = students)
+<<<<<<< HEAD
       
+=======
+    this.activatedRoute
+      .params
+      .subscribe(params =>
+        this.userId = params['userId']);
+>>>>>>> 76444427ace7b033540e29401920faa5c25a2387
   }
 
   selectStudent(student: any) {
