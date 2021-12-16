@@ -1,6 +1,23 @@
-<p>Student Names</p>
-<ul class="list-group">
-    <li *ngFor="let student of students" class="list-group-item">
-        {{student.name}}
-    </li>
-</ul>
+<h2>Student Names</h2>
+<div class="list-group">
+    <div *ngFor="let student of students" class="list-group-item">
+       <h1> {{student.name}}</h1>
+        <table class="mytable">
+            <thead>
+                <tr>
+                    <th class="header">Book Title</th>
+                    <th class="header">Book Days</th>
+                    <th class="header">Book Id</th>
+                </tr>
+
+            </thead>
+            <tbody *ngFor="let book of student.books">
+                <tr>
+                    <td>{{book.title}}</td>
+                    <td>{{book.days}}</td>
+                    <td>{{book.bookid}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
